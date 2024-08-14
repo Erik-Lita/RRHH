@@ -1,6 +1,5 @@
 package com.distribuida.entities;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,25 +11,27 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name = "Forma_pago")
+@Table(name = "forma_pago")
 public class Formapago {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_forma_pago") 
     private int id_forma_pago; 
+    
     @Column(name = "forma_pago") 
     private String forma_pago; 
-    @Column(name = "descipcion") 
-    private String descipcion; 
+    
+    @Column(name = "descripcion")  // Cambié 'descipcion' a 'descripcion'
+    private String descripcion; 
     
     public Formapago() {}
 
-	public Formapago(int id_forma_pago, String forma_pago, String descipcion) {
+	public Formapago(int id_forma_pago, String forma_pago, String descripcion) { // Cambié 'descipcion' a 'descripcion'
 		super();
 		this.id_forma_pago = id_forma_pago;
 		this.forma_pago = forma_pago;
-		this.descipcion = descipcion;
+		this.descripcion = descripcion; // Cambié 'descipcion' a 'descripcion'
 	}
 
 	public int getId_forma_pago() {
@@ -49,20 +50,17 @@ public class Formapago {
 		this.forma_pago = forma_pago;
 	}
 
-	public String getDescipcion() {
-		return descipcion;
+	public String getDescripcion() {  // Cambié 'descipcion' a 'descripcion'
+		return descripcion;
 	}
 
-	public void setDescipcion(String descipcion) {
-		this.descipcion = descipcion;
+	public void setDescripcion(String descripcion) {  // Cambié 'descipcion' a 'descripcion'
+		this.descripcion = descripcion;
 	}
 
 	@Override
 	public String toString() {
-		return "Formapago [id_forma_pago=" + id_forma_pago + ", forma_pago=" + forma_pago + ", descipcion=" + descipcion
+		return "Formapago [id_forma_pago=" + id_forma_pago + ", forma_pago=" + forma_pago + ", descripcion=" + descripcion
 				+ "]";
 	}
-
-
-    
 }
